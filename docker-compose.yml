@@ -42,6 +42,20 @@ services:
     networks:
       - appnet
 
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    ports:
+      - "8080:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    restart: always
+    networks:
+      - appnet
+
 networks:
   appnet:
     driver: bridge

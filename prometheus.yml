@@ -2,10 +2,10 @@ global:
   scrape_interval: 15s
 
 scrape_configs:
-  - job_name: 'backend'
+  - job_name: 'prometheus'
     static_configs:
-      - targets: ['backend:8000']
+      - targets: ['localhost:9090']
 
-  - job_name: 'nginx'
+  - job_name: 'cadvisor'
     static_configs:
-      - targets: ['nginx:80']
+      - targets: ['cadvisor:8080']
