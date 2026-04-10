@@ -234,7 +234,29 @@ DevOps-Assignment/
 ├── nginx.conf                # Reverse proxy configuration
 └── README.md
 ```
+## Load Balancer Architecture
 
+In a production environment with high traffic, a load balancer would sit in front of multiple backend instances:
+User Browser
+│
+▼
+AWS Application Load Balancer (ALB)
+│
+├──▶ EC2 Instance 1 (Nginx + Backend)
+├──▶ EC2 Instance 2 (Nginx + Backend)
+└──▶ EC2 Instance 3 (Nginx + Backend)
+
+The ALB distributes incoming HTTP and WebSocket traffic across multiple EC2 instances. For WebSocket connections, sticky sessions (session affinity) must be enabled so a user stays connected to the same backend instance throughout their session.
+
+## Auto-Scaling Approach
+
+AWS Auto Scaling would be configured to:
+- Scale out (add instances) when CPU exceeds 70% for 2 minutes
+- Scale in (remove instances) when CPU drops below 30% for 5 minutes
+- Maintain a minimum of 2 instances for high availability
+- Set a maximum of 6 instances to control costs
+
+This ensures the chat application handles traffic spikes automatically without manual intervention.
 ---
 
 *Built by [Vivek Bommalla](https://github.com/vivek1251)*
