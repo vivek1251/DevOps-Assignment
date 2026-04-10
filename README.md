@@ -260,3 +260,4 @@ This ensures the chat application handles traffic spikes automatically without m
 ---
 
 *Built by [Vivek Bommalla](https://github.com/vivek1251)*
+# Monitoring: Prometheus at :9090 | Grafana at :3000
