@@ -4,9 +4,9 @@
 
 A production-grade deployment of a real-time WebSocket chat application using Docker, Nginx, GitHub Actions CI/CD and a full monitoring stack — deployed on AWS EC2.
 
-**Live Application:** http://54.208.170.38
-**Prometheus:** http://54.208.170.38:9090
-**Grafana:** http://54.208.170.38:3000
+**Live Application:** http://13.218.99.150
+**Prometheus:** http://13.218.99.150:9090
+**Grafana:** http://13.218.99.150:3000
 
 ---
 
@@ -24,7 +24,7 @@ The original repository contained 3 deliberate bugs across `Dockerfile`, `docker
 User Browser
      │
      ▼
-http://52.206.227.210 (AWS EC2 t3.micro — Ubuntu 24.04)
+http://13.218.99.150 (AWS EC2 t3.micro — Ubuntu 24.04)
      │
      ▼
 ┌──────────────────────────────────────────────────────────┐
@@ -197,7 +197,7 @@ git push → GitHub Actions triggered
          Checkout latest code
               │
               ▼
-         SSH into EC2 (52.206.227.210)
+         SSH into EC2 (13.218.99.150)
          using stored secrets
               │
               ▼
@@ -236,9 +236,9 @@ The stack includes a full monitoring setup using cAdvisor + Prometheus + Grafana
 
 | Service | URL | Credentials |
 |---|---|---|
-| Grafana | http://52.206.227.210:3000 | admin / admin |
-| Prometheus | http://52.206.227.210:9090 | — |
-| cAdvisor | http://52.206.227.210:8080 | — |
+| Grafana | http://13.218.99.150:3000 | admin / admin |
+| Prometheus | http://13.218.99.150:9090 | — |
+| cAdvisor | http://13.218.99.150:8080 | — |
 
 ---
 
