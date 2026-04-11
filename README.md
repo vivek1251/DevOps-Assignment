@@ -4,9 +4,9 @@
 
 A production-grade deployment of a real-time WebSocket chat application using Docker, Nginx, GitHub Actions CI/CD and a full monitoring stack — deployed on AWS EC2.
 
-**Live Application:** http://52.206.227.210
-**Prometheus:** http://52.206.227.210:9090
-**Grafana:** http://52.206.227.210:3000
+**Live Application:** http://54.208.170.38
+**Prometheus:** http://54.208.170.38:9090
+**Grafana:** http://54.208.170.38:3000
 
 ---
 
